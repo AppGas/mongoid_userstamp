@@ -9,8 +9,8 @@ module Userstamp
 
     included do
 
-      belongs_to mongoid_userstamp_config.created_name, class_name: mongoid_userstamp_config.user_model, inverse_of: nil
-      belongs_to mongoid_userstamp_config.updated_name, class_name: mongoid_userstamp_config.user_model, inverse_of: nil
+      belongs_to mongoid_userstamp_config.created_name, class_name: mongoid_userstamp_config.user_model, autosave: false, required: false
+      belongs_to mongoid_userstamp_config.updated_name, class_name: mongoid_userstamp_config.user_model, autosave: false, required: false
 
       before_create :set_created_by
       before_save :set_updated_by
